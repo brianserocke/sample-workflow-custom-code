@@ -17,7 +17,7 @@ function processEvent(event) {
   hubspotClient.crm.contacts.basicApi
     .getById(contactId, [PHONE_NUMBER_PROP])
     .then(results => {
-      let phone = results.body.properties[PHONE_NUMBER_PROP];
+      let phone = results.properties[PHONE_NUMBER_PROP];
 
       hubspotClient.crm.contacts.basicApi
         .update(
