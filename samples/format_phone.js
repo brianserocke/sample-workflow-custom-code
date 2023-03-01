@@ -33,7 +33,7 @@ function processEvent(event) {
 }
 
 function formatPhoneNumber(phoneNumber) {
-  let cleaned = phoneNumber.replace(/\D/g, '').trim();
+  let cleaned = phoneNumber.replace(/\+1|\D|(\b1\D\(\b)|(\b1\(\b)|^1/g, '').trim();
   let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
   if (match) {
     // Format as (XXX) XXX-XXXX
